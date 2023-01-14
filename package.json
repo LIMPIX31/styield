@@ -1,0 +1,35 @@
+{
+  "name": "styield",
+  "version": "1.0.0",
+  "description": "StYield - an add-on for styled-components that allows you to write complex styles without ugly ternaries",
+  "main": "dist/index.js",
+  "exports": "./dist/index.js",
+  "typings": "./dist/typings/index.d.ts",
+  "repository": "https://github.com/LIMPIX31/styield",
+  "author": "LIMPIX31",
+  "license": "MIT",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.26",
+    "prettier": "^2.8.3",
+    "typescript": "^4.9.4"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "styled-components": "^5.3.6"
+  },
+  "keywords": [
+    "styled-components",
+    "addon",
+    "generator",
+    "yield",
+    "styled",
+    "react",
+    "css"
+  ]
+}
