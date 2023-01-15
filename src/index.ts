@@ -1,6 +1,10 @@
-import { css, FlattenInterpolation, SimpleInterpolation } from 'styled-components'
+import { css, FlattenSimpleInterpolation, SimpleInterpolation } from 'styled-components'
 
-type GeneratorType<T = any> = Generator<string | SimpleInterpolation | FlattenInterpolation<T>>
+type GeneratorType = Generator<string | SimpleInterpolation | FlattenSimpleInterpolation>
+
+export type Interpolation = GeneratorType
+
+export type StyieldUnit = (() => Interpolation) | Interpolation
 
 function collect(generator: GeneratorType): TemplateStringsArray {
   const interpolations: any[] = []
@@ -8,6 +12,6 @@ function collect(generator: GeneratorType): TemplateStringsArray {
   return css({}, ...interpolations) as TemplateStringsArray
 }
 
-export function y<T>(gfn: () => GeneratorType) {
-  return collect(gfn())
+export function y<T>(gfn: StyieldUnit) {
+  return collect(typeof gfn === 'function' ? gfn() : gfn)
 }
