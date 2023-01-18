@@ -17,6 +17,8 @@
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
     "prettier": "^2.8.3",
+    "react": "^18.2.0",
+    "styled-components": "^5.3.6",
     "typescript": "^4.9.4"
   },
   "peerDependencies": {
@@ -31,5 +33,8 @@
     "styled",
     "react",
     "css"
-  ]
+  ],
+  "dependencies": {
+    "kebab-case": "^1.0.2"
+  }
 }
